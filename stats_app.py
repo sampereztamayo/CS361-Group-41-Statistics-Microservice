@@ -8,6 +8,7 @@ app = Flask(__name__)
 def health_check():
     return jsonify({'status': 'healthy'}), 200
 
+
 @app.route('/stats/sum', methods = ['POST'])
 def calculate_sum():
     incoming_data = request.get_json()
@@ -22,6 +23,7 @@ def calculate_sum():
     total = sum(numbers)
     return jsonify({'status': 'success',
                     'return_value': total}), 200
+
 
 @app.route('/stats/average', methods = ['POST'])
 def calculate_average():
