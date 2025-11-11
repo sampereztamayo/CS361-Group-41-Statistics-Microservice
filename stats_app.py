@@ -7,6 +7,29 @@ app = Flask(__name__)
 def health_check():
     return jsonify({'status': 'healthy'}), 200
 
+@app.route('/stats/sum', methods = ['POST'])
+def sum():
+    incoming_data = request.get_json()
+    numbers = incoming_data.get('numbers', [])
+
+    # empty list; error
+    if not numbers:
+        return jsonify({'status': 'error',
+                       'error_message': 'cannot calculate using empty list'}), 400
+
+    # success
+    sum = sum(numbers)
+    return jsonify({'status': 'success',
+                    'return_value': sum}), 200
+
+
+
+
+
+
+
+
+
 
 
 
