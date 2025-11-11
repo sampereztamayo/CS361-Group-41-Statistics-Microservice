@@ -13,9 +13,7 @@ def test_sum(data):
 
 
 
-
-
-
 # Testing
 numbers = [1, 3, 5, 9, 12]
-test_sum(numbers)
+
+test_sum({"numbers": [numbers]})
