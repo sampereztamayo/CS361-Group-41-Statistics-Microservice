@@ -1,7 +1,13 @@
 # CS361-Group-41-Statistics-Microservice
+# URLs:
+* Median: https://cs361-group-41-statistics-microservice-2.onrender.com/stats/sum
+* Average: https://cs361-group-41-statistics-microservice-2.onrender.com/stats/average
+* Percentage: https://cs361-group-41-statistics-microservice-2.onrender.com/stats/percentage
+* Median: https://cs361-group-41-statistics-microservice-2.onrender.com/stats/median
+
 
 ## Requesting data:
-* Main program sends a HTTP POST request to the url of the public server corresponding to the statistic they want, in this case hosted via Render. The numbers that the statistics are to be done on are stored in a JSON object, which is sent during the request.
+* Main program sends a HTTP POST request to the url of the public server (hosted via Render) corresponding to the statistic they want. The numbers that the statistics are to be done on are stored in a JSON object, which is sent during the request.
 
 * Example call in Python (sum calculation):
 ```
@@ -29,7 +35,7 @@ response = requests.post(url_server, json = request_data)
 # parse data into a dictionary
 incoming_data = response.json()
 
-# statistic (sum) is held in 'return_value' key 
+# statistic (sum) is the value of 'return_value' key 
 if incoming_data.get('status') == 'success':
     print(f"Sum successfully calculated: {incoming_data.get('return_value')}")
 ```
