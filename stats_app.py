@@ -22,6 +22,20 @@ def calculate_sum():
     return jsonify({'status': 'success',
                     'return_value': total}), 200
 
+@app.route('/stats/average', methods = ['POST'])
+def calculate_average():
+    incoming_data = request.get_json()
+    numbers = incoming_data.get('numbers', [])
+
+    # empty list; error
+    if not numbers:
+        return jsonify({'status': 'error',
+                       'error_message': 'cannot calculate using empty list'}), 400
+
+    # success
+    average = sum(numbers)/len(numbers)
+    return jsonify({'status': 'success',
+                    'return_value': average}), 200
 
 
 
