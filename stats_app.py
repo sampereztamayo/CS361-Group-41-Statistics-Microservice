@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, request
+import statistics
 
 app = Flask(__name__)
 
@@ -54,6 +55,20 @@ def calculate_percentage():
                     'return_value': percentage}), 200
 
 
+@app.route('/stats/median', methods = ['POST'])
+def find_median():
+    incoming_data = request.get_json()
+    numbers = incoming_data.get('numbers', [])
+
+    # empty list; error
+    if not numbers:
+        return jsonify({'status': 'error',
+                       'error_message': 'cannot calculate using empty list'}), 400
+
+    # success
+    median_value = statistics.median(numbers)
+    return jsonify({'status': 'success',
+                    'return_value': median_value}), 200
 
 
 

@@ -35,7 +35,8 @@ def test_percentage(data):
 
 
 # Testing
-numbers = [1, 3, 5, 9, 12]
+numbers = [2, 3, 5, 9, 12]
 
 test_sum({'numbers': numbers})
 test_average({'numbers': numbers})
+test_percentage({'numbers': numbers})
