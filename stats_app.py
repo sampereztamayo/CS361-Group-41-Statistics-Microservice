@@ -8,7 +8,7 @@ def health_check():
     return jsonify({'status': 'healthy'}), 200
 
 @app.route('/stats/sum', methods = ['POST'])
-def sum():
+def calculate_sum():
     incoming_data = request.get_json()
     numbers = incoming_data.get('numbers', [])
 
@@ -18,9 +18,9 @@ def sum():
                        'error_message': 'cannot calculate using empty list'}), 400
 
     # success
-    summation = sum(numbers)
+    total = sum(numbers)
     return jsonify({'status': 'success',
-                    'return_value': summation}), 200
+                    'return_value': total}), 200
 
 
 
