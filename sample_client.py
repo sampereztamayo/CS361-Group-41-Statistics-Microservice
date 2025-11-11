@@ -1,6 +1,7 @@
 import requests
 
 url_sum = 'https://cs361-group-41-statistics-microservice-2.onrender.com/stats/sum'
+url_average = 'https://cs361-group-41-statistics-microservice-2.onrender.com/stats/average'
 
 def test_sum(data):
     # send JSON data to Render server
@@ -14,7 +15,7 @@ def test_sum(data):
 
 def test_average(data):
     # send JSON data to Render server
-    response = requests.post(url_sum, json = data)
+    response = requests.post(url_average, json = data)
 
     incoming_data = response.json()
 
