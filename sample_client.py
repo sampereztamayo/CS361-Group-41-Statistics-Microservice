@@ -46,6 +46,7 @@ def test_median(data):
         print(f"Median successfully calculated: {incoming_data.get('return_value')}")
 
 
+
 # Testing
 numbers = [2, 4, 3, 5, 9, 9, 12]
 
