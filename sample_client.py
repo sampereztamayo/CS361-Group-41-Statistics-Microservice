@@ -2,6 +2,7 @@ import requests
 
 url_sum = 'https://cs361-group-41-statistics-microservice-2.onrender.com/stats/sum'
 url_average = 'https://cs361-group-41-statistics-microservice-2.onrender.com/stats/average'
+url_percentage = 'https://cs361-group-41-statistics-microservice-2.onrender.com/stats/percentage'
 
 def test_sum(data):
     # send JSON data to Render server
@@ -23,6 +24,14 @@ def test_average(data):
         print(f"Average successfully calculated: {incoming_data.get('return_value')}")
 
 
+def test_percentage(data):
+    # send JSON data to Render server
+    response = requests.post(url_percentage, json = data)
+
+    incoming_data = response.json()
+
+    if incoming_data.get('status') == 'success':
+        print(f"Percentage successfully calculated: {incoming_data.get('return_value')}")
 
 
 # Testing

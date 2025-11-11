@@ -38,8 +38,20 @@ def calculate_average():
                     'return_value': average}), 200
 
 
+@app.route('/stats/percentage', methods = ['POST'])
+def calculate_percentage():
+    incoming_data = request.get_json()
+    numbers = incoming_data.get('numbers', [])
 
+    # empty list; error
+    if not numbers:
+        return jsonify({'status': 'error',
+                       'error_message': 'cannot calculate using empty list'}), 400
 
+    # success
+    percentage = (numbers[0] / numbers[1]) * 100
+    return jsonify({'status': 'success',
+                    'return_value': percentage}), 200
 
 
 
