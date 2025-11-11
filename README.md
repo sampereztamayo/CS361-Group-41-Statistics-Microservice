@@ -11,7 +11,7 @@
 
 * Example call in Python (sum calculation):
 ```
-import json 
+import requests 
 
 # select url of desired statistic
 url_server = 'https://cs361-group-41-statistics-microservice-2.onrender.com/stats/sum'
