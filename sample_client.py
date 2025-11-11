@@ -12,8 +12,7 @@ def test_sum(data):
         print(f"Sum successfully calculated: {incoming_data.get('return_value')}")
 
 
-
 # Testing
 numbers = [1, 3, 5, 9, 12]
 
-test_sum({"numbers": [numbers]})
+test_sum({"numbers": numbers})

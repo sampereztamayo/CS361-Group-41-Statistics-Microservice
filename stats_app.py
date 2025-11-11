@@ -18,9 +18,9 @@ def sum():
                        'error_message': 'cannot calculate using empty list'}), 400
 
     # success
-    sum = sum(numbers)
+    summation = sum(numbers)
     return jsonify({'status': 'success',
-                    'return_value': sum}), 200
+                    'return_value': summation}), 200
 
 
 
