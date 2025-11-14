@@ -4,7 +4,7 @@ import statistics
 app = Flask(__name__)
 
 # input validation
-def _validate_numeric_input(numbers):
+def _validate_input(numbers):
     # validate data existence
     if not numbers:
         return False, 'cannot calculate using empty list'
@@ -27,6 +27,8 @@ def health_check():
 def calculate_sum():
     incoming_data = request.get_json()
     numbers = incoming_data.get('numbers', [])
+
+    validity, message = _validate_input(numbers)
 
     # empty list; error
     if not numbers:

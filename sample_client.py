@@ -48,7 +48,7 @@ def test_median(data):
 
 
 # Testing
-numbers = [2, 4, 3, 'a', 9, 9, 12, 22]
+numbers = [2, 86, 3, 7, 9, 54, 129, 22]
 
 test_sum({'numbers': numbers})
 test_average({'numbers': numbers})
