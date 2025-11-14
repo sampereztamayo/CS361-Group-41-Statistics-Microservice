@@ -41,3 +41,4 @@ if incoming_data.get('status') == 'success':
 ```
 
 ## UML sequence diagram:
+![UML Diagram Statistics Microservice](UML_diagram.png)
