@@ -3,6 +3,20 @@ import statistics
 
 app = Flask(__name__)
 
+# input validation
+def _validate_numeric_input(numbers):
+    # validate data existence
+    if not numbers:
+        return False, 'cannot calculate using empty list'
+
+    # validate data type
+    for n in numbers:
+        if not isinstance(n, (float, int)):
+            return False, 'only floats and integers are allowed'
+
+    return True, None
+
+
 # health check
 @app.route('/health', methods = ['GET'])
 def health_check():
